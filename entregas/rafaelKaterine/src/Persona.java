@@ -5,10 +5,12 @@ public class Persona {
     public boolean esPreferencial;
     public int minutoDeLlegada;
     private static final Random random = new Random();
+    public int id;
 
-    public Persona(int minutoDeLlegada) {
+    public Persona(int minutoDeLlegada, int id) {
         this.esPreferencial = random.nextDouble() < 0.15;
         this.minutoDeLlegada = minutoDeLlegada;
+        this.id = id;
     } 
 
     public boolean seAburre (int minutoActual) {
@@ -20,7 +22,7 @@ public class Persona {
     }
 
     public String perfil() {
-        return esPreferencial ? "🏥" : "👤";
+        return (esPreferencial ? "🏥" : "👤") + id;
     }
 
 
