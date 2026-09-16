@@ -1,12 +1,12 @@
 public class Cliente {
 
     private int packDeItems;
-    private String nombreCliente;
+    private boolean esPreferencial;
 
-    public Cliente(int compraMinima, int compraMaxima, String nombre) {
-        packDeItems = (int) (Math.random() * (compraMaxima - compraMinima) + compraMinima);
-        nombreCliente = nombre;
-        System.out.println("Llegó [" + nombre + "] con [" + packDeItems + "] panes bajo el brazo");
+    public Cliente(int id, int compraMinima, int compraMaxima) {
+        this.packDeItems = (int) (Math.random() * (compraMaxima - compraMinima + 1) + compraMinima);
+        this.minutoLlegada = minutoLlegada;
+        this.esPreferencial = Math.random() < 0.35; 
     }
 
     public void entregaProducto() {
@@ -17,8 +17,12 @@ public class Cliente {
         return packDeItems > 0;
     }
 
-    @Override
-    public String toString() {
-        return "Atendiendo a " + nombreCliente + ". Le quedan : " + packDeItems;
+    public boolean esPreferencial() {
+        return esPreferencial;
     }
+
+    public void mostrar() {
+        System.out.println("Cliente [" packDeItems=" + packDeItems + ", esPreferencial=" + esPreferencial + "]");
+    }
+
 }
