@@ -19,6 +19,10 @@ public class Persona {
         return false;
     }
 
+    public String perfil() {
+        return esPreferencial ? "🏥" : "👤";
+    }
+
 
 
 
