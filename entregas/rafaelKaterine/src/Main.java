@@ -24,16 +24,24 @@ public class Main {
 
             limpiarPantalla();
 
-            System.out.println("=== SIMULACIÓN CARREFOUR (2 HORAS) ===");
-            System.out.print("Minuto " + minActual + " -> ");
+            System.out.println("Minuto " + minActual);
 
             if (random.nextDouble() < 0.60) {
                 Persona nueva = new Persona(minActual, contadorPersonas++);
-                fila.agregarPersona(nueva);
+                boolean entro = fila.agregarPersona(nueva);
+                
+                if (entro) {
+                    System.out.println("Llega persona: " + nueva.perfil());
+                } else {
+                    System.out.println("Persona " + nueva.perfil() + " no entra (fila llena)");
+                }
             }
 
             if (caja.estaDisponible()) {
-                fila.atender();
+                Persona atendida = fila.atender();
+                if (atendida != null) {
+                    System.out.println("Caja atiende a: " + atendida.perfil());
+                }
             }
 
             if (tiempo.reglasNuevasActivas()) {
@@ -41,23 +49,30 @@ public class Main {
                 fila.revisarAburrimiento(minActual);
 
                 if (random.nextDouble() < 0.10) {
-                    fila.colarse(new Persona(minActual, contadorPersonas++));
+                    Persona colado = new Persona(minActual, contadorPersonas++);
+                    if (fila.colarse(colado)) {
+                        System.out.println("Se cuela persona: " + colado.perfil());
+                    }
                 }
 
                 if (random.nextDouble() < 0.05) {
-                    fila.transferirCompras();
+                    if (fila.transferirCompras()) {
+                        System.out.println("Una persona transfiere sus compras y sale");
+                    }
                 }
 
                 if (tiempo.esTiempoDeParlante() && fila.getTamaño() > 25) {
-                    System.out.print("[Parlantes: Pasen por esta caja] ");
-                    fila.atender();
+                    Persona atendidaRapida = fila.atender();
+                    if (atendidaRapida != null) {
+                        System.out.println("Parlante (Fila > 25): Atendida en caja rápida " + atendidaRapida.perfil());
+                    }
                 }
             }
 
             fila.mostrarEstado();
 
             try {
-                Thread.sleep(300); 
+                Thread.sleep(3000); 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
