@@ -4,7 +4,7 @@ public class Tiempo {
 
     public Tiempo(int duracionTotal) {
         this.minutoActual = 0;
-        this.duracionTotal = 120;
+        this.duracionTotal = duracionTotal;
     }
 
     public void avanzarMinuto() {
