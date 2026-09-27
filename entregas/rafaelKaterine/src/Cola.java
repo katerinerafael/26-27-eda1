@@ -25,7 +25,8 @@ public class Cola {
             primero = persona;
             ultimo = persona;
         } else {
-            ultimo.colocarseDetrasDe(persona);
+            ultimo.setSiguiente(persona);
+            persona.vaDelante(ultimo);
             ultimo = persona;
         }
         tamano++;
@@ -35,13 +36,14 @@ public class Cola {
         if (estaVacia()) {
             return null;
         }
+
         Persona atendido = primero;
         primero = primero.devolverSiguiente();
-        
+
         if (primero == null) {
             ultimo = null;
         }
-        
+
         tamano--;
         return atendido;
     }
@@ -49,5 +51,15 @@ public class Cola {
     public String mostrar() {
         if (estaVacia()) return "Cola vacía";
         return primero.mostrar();
+    }
+
+    public String mostrarAlReves() {
+        if (estaVacia()) return "Cola vacía";
+        return primero.mostrarAlReves();
+    }
+
+    public Persona buscar(String nombre) {
+        if (estaVacia()) return null;
+        return primero.buscar(nombre);
     }
 }

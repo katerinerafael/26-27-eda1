@@ -99,6 +99,22 @@ class Persona {
         return siguiente.mostrarAlReves() + " <- " + nombre;
     }
 
+    public Persona getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(Persona siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    public Persona getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(Persona anterior) {
+        this.anterior = anterior;
+    }
+
 
 
 }
