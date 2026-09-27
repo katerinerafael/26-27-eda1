@@ -16,9 +16,13 @@ public class Simulacion {
         boolean hayPrimero = primero.haySiguiente();
         if (hayPrimero) {
             primero = primero.devolverSiguiente();
-            System.out.println("El nuevo primero es: " + primero.contar());
+            System.out.println("El nuevo primero es: " + primero.mostrar());
         }
 
+        System.out.println("Cola inicial: " + primero.mostrar());
+        maikol.colocarseDetrasDe(luisFelipe);
+
+        System.out.println("Después de colarse Maikol detrás de luisFelipe: " + primero.mostrar());
 
         
     }

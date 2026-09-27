@@ -77,6 +77,20 @@ class Persona {
         }
     }
 
-    
+    public void colocarseDetrasDe(Persona persona) {
+        if (persona == null || persona == this) {
+            return;
+        }
+        this.salir();
+        Persona queEstabaDetras = persona.siguiente;
+        persona.siguiente = this;
+        this.anterior = persona;
+        this.siguiente = queEstabaDetras;
+        if (queEstabaDetras != null) {
+            queEstabaDetras.anterior = this;
+        }
+    }
+
+
 
 }
