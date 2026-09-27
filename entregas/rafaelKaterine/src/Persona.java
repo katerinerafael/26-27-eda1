@@ -59,4 +59,12 @@ class Persona {
         }
     }
 
+    public int contar() {
+        if (siguiente == null) {
+            return 1;
+        } else {
+            return 1 + siguiente.contar();
+        }
+    }
+
 }
