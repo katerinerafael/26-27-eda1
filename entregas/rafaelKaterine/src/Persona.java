@@ -51,4 +51,12 @@ class Persona {
         siguiente = null;
     }
 
+    public String mostrar(){
+        if (siguiente == null) {
+        return nombre;
+        } else {
+            return nombre + " -> " + siguiente.mostrar();
+        }
+    }
+
 }

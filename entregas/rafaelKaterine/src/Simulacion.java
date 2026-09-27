@@ -1,5 +1,5 @@
 public class Simulacion { 
-    
+
     public static void main(String[] args) {
         Persona jacobo = new Persona("Jacobo");
         Persona hector = new Persona("Héctor");
@@ -16,7 +16,7 @@ public class Simulacion {
         boolean hayPrimero = primero.haySiguiente();
         if (hayPrimero) {
             primero = primero.devolverSiguiente();
-            System.out.println("El nuevo primero es: " + primero.getNombre());
+            System.out.println("El nuevo primero es: " + primero.mostrar());
         }
     }
 }
