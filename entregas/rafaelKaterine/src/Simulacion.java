@@ -20,9 +20,7 @@ public class Simulacion {
         }
 
         System.out.println("Cola inicial: " + primero.mostrar());
-        maikol.colocarseDetrasDe(luisFelipe);
-
-        System.out.println("Después de colarse Maikol detrás de luisFelipe: " + primero.mostrar());
+        System.out.println("Al revés: " + primero.mostrarAlReves());
 
         
     }

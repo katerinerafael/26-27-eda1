@@ -92,5 +92,13 @@ class Persona {
     }
 
 
+    public String mostrarAlReves() {
+        if (siguiente == null) {
+            return nombre;
+        }
+        return siguiente.mostrarAlReves() + " <- " + nombre;
+    }
+
+
 
 }
