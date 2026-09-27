@@ -67,4 +67,16 @@ class Persona {
         }
     }
 
+    public Persona buscar(String nombre) {
+        if (this.nombre.equals(nombre)) {
+            return this;
+        } else if (siguiente != null) {
+            return siguiente.buscar(nombre);
+        } else {
+            return null;
+        }
+    }
+
+    
+
 }

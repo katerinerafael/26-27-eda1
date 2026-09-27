@@ -18,5 +18,8 @@ public class Simulacion {
             primero = primero.devolverSiguiente();
             System.out.println("El nuevo primero es: " + primero.contar());
         }
+
+
+        
     }
 }
