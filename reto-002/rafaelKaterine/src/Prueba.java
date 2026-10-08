@@ -9,5 +9,17 @@ public class Prueba {
         lista.imprimirLista();
         lista.eliminarRepetidos();
         lista.imprimirLista();
+
+
+        ListaEnlazada lista2 = new ListaEnlazada();
+        lista2.insertarAlPrincipio(1);
+        lista2.insertarAlPrincipio(2);
+        lista2.insertarAlPrincipio(2);
+        lista2.insertarAlPrincipio(6);
+        lista2.insertarAlPrincipio(7);
+        lista2.imprimirLista();
+        lista2.eliminarRepetidosSinDummy();
+        lista2.imprimirLista();
+
     }
 }
