@@ -17,6 +17,10 @@ class ListaEnlazada {
         }
     }
 
+    public insertarEnPosicion(int posicion){
+        
+    }
+
     public void imprimirLista() {
         Nodo actual = cabeza;
         while (actual != null) {
