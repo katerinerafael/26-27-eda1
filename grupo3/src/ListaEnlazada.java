@@ -17,8 +17,12 @@ class ListaEnlazada {
         }
     }
 
-    public insertarEnPosicion(int posicion){
-        
+    public int obtenerElemento(int posicion) {
+        Nodo actual = cabeza;
+        for (int i = 0; i < posicion; i++) {
+            actual = actual.siguiente;
+        }
+        return actual.dato;
     }
 
     public void imprimirLista() {

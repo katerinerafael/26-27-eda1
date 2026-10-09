@@ -7,8 +7,16 @@ class Arreglo {
         crearArreglo(longitud);
     }
 
-    public void agregarElemento(){
-        lista.inserta
+    public void agregarElemento(int posicion, int elemento){
+        validarPosicion(posicion);
+        lista.insertarEnPosicion(posicion, elemento);
+    }
+
+    private void validarPosicion(int posicion){
+        assert(posicion >= 0 && posicion < longitud) : "Posición fuera de rango";
+    }
+    public int longitud(){
+        return longitud;
     }
 
     private void crearArreglo(int tamaño){
@@ -16,5 +24,10 @@ class Arreglo {
         for(int i = 0; i <= tamaño; i++){
             lista.insertarAlPrincipio(0);
         }
+    }
+
+    public int obtenerElemento(int posicion){
+        validarPosicion(posicion);
+        return lista.obtenerElemento(posicion);
     }
 }
